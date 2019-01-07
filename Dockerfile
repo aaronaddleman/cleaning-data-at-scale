@@ -1,4 +1,4 @@
-FROM jupyter/<notebook>:<version hash>
+FROM jupyter/datascience-notebook:a95cb64dfe10
 
 # launchbot-specific labels
 LABEL name.launchbot.io="Cleaning data at scale"
@@ -14,9 +14,7 @@ COPY requirements.txt /home/jovyan/requirements.txt
 RUN pip install -r /home/jovyan/requirements.txt
 
 # Add files
-COPY notebooks /home/jovyan/notebooks
-COPY data /home/jovyan/data
-COPY solutions /home/jovyan/solutions
+COPY notebooks /home/jovyan
 
 # Allow user to write to directory
 USER root
@@ -28,4 +26,4 @@ USER $NB_USER
 EXPOSE 8888
 
 # Start the notebook server
-CMD jupyter notebook --no-browser --port 8888 --ip=* --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10
+CMD jupyter notebook --no-browser --port 8888 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10

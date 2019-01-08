@@ -1,11 +1,5 @@
 FROM jupyter/datascience-notebook:a95cb64dfe10
 
-# launchbot-specific labels
-LABEL name.launchbot.io="Cleaning data at scale"
-LABEL workdir.launchbot.io="/home/jovyan"
-LABEL description.launchbot.io="Cleaning data at scale"
-LABEL 8888.port.launchbot.io="Start Tutorial"
-
 #Set the working directory
 WORKDIR /home/jovyan/
 

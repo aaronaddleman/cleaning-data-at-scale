@@ -1,4 +1,4 @@
-# ${COURSE TITLE GOES HERE}
+# Cleaning Data at Scale
 
 ![Powered by Jupyter Logo](https://cdn.oreillystatic.com/images/icons/powered_by_jupyter.png)
 
